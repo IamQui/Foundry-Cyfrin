@@ -73,7 +73,7 @@ $ cast --help
 
 
 foundryup
-vaniall foundry -- forge 0.2.0
+vanilla foundry -- forge 0.2.0
 
 foundryup-zksync
 zksync foundry -- forge 0.0.2
