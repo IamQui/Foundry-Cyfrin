@@ -64,3 +64,17 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+## TODO
+
+1. Install `foundry-zksync`
+2. Compile with `--zksync`
+3. Reinstall vanilla foundry
+
+
+foundryup
+vaniall foundry -- forge 0.2.0
+
+foundryup-zksync
+zksync foundry -- forge 0.0.2
+
