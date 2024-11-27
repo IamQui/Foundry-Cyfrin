@@ -29,7 +29,7 @@ contract HelperConfig is Script {
         } else if (block.chainid == 1){
             activeNetworkConfig = getMainnetETHConfig();
         } else {
-            activeNetworkConfig = getAnvilETHConfig();
+            activeNetworkConfig = getOrCreateAnvilETHConfig();
         }
     }
     function getSepoliaETHConfig() public pure returns(NetworkConfig memory){
@@ -44,7 +44,11 @@ contract HelperConfig is Script {
         return mainnetConfig;
     }
 
-    function getAnvilETHConfig() public returns(NetworkConfig memory){
+    function getOrCreateAnvilETHConfig() public returns(NetworkConfig memory){
+        if(activeNetworkConfig.priceFeed != address(0)){
+            return activeNetworkConfig;
+        }
+
         //price feed address
         
         // 1. Deploy the mocks
