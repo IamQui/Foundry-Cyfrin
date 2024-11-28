@@ -91,7 +91,7 @@ contract FundMeTest is Test{
     function testOnlyOwnerCanWithdraw() public funded{
         vm.prank(USER);
         vm.expectRevert();
-        fundMe.withdraw();
+        fundMe.cheaperWithdraw();
     }
 
     function testWithdrawWithASingleFunder() public funded {
@@ -101,7 +101,7 @@ contract FundMeTest is Test{
 
         // Act (Action)
         vm.prank(fundMe.getOwner());
-        fundMe.withdraw();
+        fundMe.cheaperWithdraw();
 
         // Assert
         uint256 endingOwnerBalance = fundMe.getOwner().balance;
@@ -122,7 +122,7 @@ contract FundMeTest is Test{
         uint256 startingFundMeBalance = address(fundMe).balance;
 
         vm.startPrank(fundMe.getOwner());
-        fundMe.withdraw();
+        fundMe.cheaperWithdraw();
         vm.stopPrank();
 
         assert(address(fundMe).balance == 0);
