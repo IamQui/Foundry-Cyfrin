@@ -50,7 +50,7 @@ contract FundMe {
         (bool callSuccess,) = payable(msg.sender).call{value: address(this).balance}("");
         require(callSuccess, "Call failed");
     }
-/*
+
     function withdraw() public onlyOwner {
         for (uint256 funderIndex = 0; funderIndex < s_funders.length; funderIndex++) {
             address funder = s_funders[funderIndex];
@@ -79,7 +79,7 @@ contract FundMe {
     //   yes   no
     //  /        \
     //receive()  fallback()
-*/
+
     fallback() external payable {
         fund();
     }
