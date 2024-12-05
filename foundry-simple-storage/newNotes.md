@@ -28,4 +28,29 @@ Import it into MetaMask
   (Paste Private Key from anvil)
 * Hit import
 
+## Look into running own Ethereum Node ##
 
+## Deploying to a local blockchain using Forge
+
+CLI:
+
+* run anvil
+* hit '+' for new terminal
+
+* Compile Contract: 
+    * forge create <path>:<contractname>
+    (ex: forge create src/SimpleStorage.sol:SimpleStorage)
+            -OR-
+    * forge create <contractname>
+    (ex: forge create SimpleStorage)
+
+* On bash:
+    * forge create <contractname> --interactive
+    (ex: forge create SimpleStorage --interactive)
+    (ex: Enter private key:)
+    (ex: <paste private key>)
+    (* never use real private key *)
+    (Contract deployed to anvil blockchain)
+
+* Long way:
+    * forge create <contractname> --rpc-url <rpc-url> --private-key <paste private key>
