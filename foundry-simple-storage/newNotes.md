@@ -157,7 +157,9 @@ ACTUAL DEPLOYMENT
 * forge script script/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545 --broadcast --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
 (private key is a default anvil private key)
 
-ALTERNATIVE TO USING A PRIVATE KEY
+ALTERNATIVE TO USING A PRIVATE KEY (ONLY FOR TESTING; NEVER PRODUCTION)
+
+
 
 
 
