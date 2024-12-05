@@ -159,7 +159,9 @@ ACTUAL DEPLOYMENT
 
 ALTERNATIVE TO USING A PRIVATE KEY (ONLY FOR TESTING; NEVER PRODUCTION)
 
-
+* create new file .env
+* goto .gitignore file
+* under '# Dotenv file' make sure .env is listed
 
 
 
