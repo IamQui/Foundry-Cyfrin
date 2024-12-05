@@ -163,6 +163,16 @@ ALTERNATIVE TO USING A PRIVATE KEY (ONLY FOR TESTING; NEVER PRODUCTION)
 * goto .gitignore file
 * under '# Dotenv file' make sure .env is listed
 
+* in .env file - add environment variables
+( environment variables are variables that are sensitive that you don't want in the command line or accidentally publically exposed )
+* in terminal: run source .env
+( adds the environment variables into your shell )
+* echo <environment variable> to see if it is loaded
+(Ex: echo $PRIVATE_KEY)
+(Ex: echo $RPC_URL)
+
+* forge script script/DeploySimpleStorage.s.sol --rpc-url $RPC_URL --broadcast --private-key $PRIVATE_KEY
+
 
 
 ## hex to dec
