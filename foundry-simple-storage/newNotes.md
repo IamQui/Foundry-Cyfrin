@@ -54,3 +54,106 @@ CLI:
 
 * Long way:
     * forge create <contractname> --rpc-url <rpc-url> --private-key <paste private key>
+    (* never use real private key *)
+
+## Deploy locally using Anvil (the sequel but a good sequel. Like Aliens)
+
+When deploying your contract, you want to make sure you have a continuous reproducible way to deploy your contracts. And when testing your contracts, you want the test to also test the deployment processes as well as the code.
+
+Write a script to deploy your contract
+
+/script
+DeploySimpleStorage.s.sol (scripts have .s.sol naming convention)
+write a contract (to deploy your smart contract)
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.26;
+
+contract DeploySimpleStorage {}
+```
+
+[Everything to know about Scripting](https://book.getfoundry.sh/tutorials/solidity-scripting)
+
+Solidity scripting is a way to declaratively deploy contracts using Solidity, instead of using the more limiting and less user friendly 'forge create'.
+
+Solidity scripts are written in Solidity, and they are run on the fast Foundry EVM backend, which provides dry-run capabilities.
+
+[The best practices for Scripts](https://book.getfoundry.sh/tutorials/best-practices#scripts)
+
+* First: import additional code
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.26;
+
+import {Script} from "forge-std/Script.sol";
+import {SimpleStorage} from "../src/SimpleStorage.sol";
+
+contract DeploySimpleStorage is Script {}
+```
+
+* Second: create function named run
+          (run will be your main function for your DeployScript)
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.26;
+
+import {Script} from "forge-std/Script.sol";
+import {SimpleStorage} from "../src/SimpleStorage.sol";
+
+contract DeploySimpleStorage is Script{
+    function run() external returns(SimpleStorage){
+        vm.startBroadcast();
+        SimpleStorage simpleStorage = new SimpleStorage();
+        //simpleStorage - variable
+        //SimpleStorage - contract
+        //'new' keyword creates a new contract
+        //so this line sends a transaction to the rpc to create a new simple storage contract
+        vm.stopBroadcast();
+        return simpleStorage;
+    }
+}
+```
+
+* vm is a special keyword in the forge standard library
+* it is only used in Foundry; only works in Foundry
+* it is related to cheatcodes
+
+[Foundry Cheatcodes Reference](https://book.getfoundry.sh/cheatcodes/)
+[Forge Standard Library References](https://book.getfoundry.sh/reference/forge-std/)
+
+* vm is not valid in regular solidity and that is why we import Script from forge-std and inherit forge STD code to our contract with 'is Script'
+
+* vm.startBroadcast() tells the contract 'everything after this, you should send to the rpc'
+* vm.stopBroadcast() tells the contract 'stop broadcasting'
+
+Terminal:
+
+* forge script script/DeploySimpleStorage.s.sol
+
+(Compiling...)
+(Compiler run successful!)
+(Script ran successfully)
+Gas used: <gasused>
+
+== Return ==
+0: contract SimpleStorage 0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496
+(* in foundry, if you don't specify an RPC URL - foundry will automatically deploy your contract, or run your script, on a temporary anvil chain *)
+
+(If you wish to simulate on-chain transactions pass a RPC URL)
+
+SIMULATION DEPLOYMENT
+
+* anvil
+* bash
+* forge script script/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545 
+
+ACTUAL DEPLOYMENT
+
+* anvil
+* bash
+* forge script script/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545 --broadcast --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
+(private key is a default anvil private key)
+
