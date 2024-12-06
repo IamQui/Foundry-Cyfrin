@@ -203,7 +203,7 @@ testKey keystore was saved successfully. Sender Address: 0xa0ee7a142d267c1f36714
 
 ## INTERACTING WITH CONTRACT USING CLI
 
-# Setting (Sending) Data
+### Setting (Sending) Data
 
 * copy contract address
 (Ex: 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35)
@@ -212,7 +212,7 @@ testKey keystore was saved successfully. Sender Address: 0xa0ee7a142d267c1f36714
 * Enter keystore password:
 (enter password)
 
-# Reading (Retrieving) Data
+### Reading (Retrieving) Data
 
 * cast call <contract address> "<function name + (input parameters)>"
 (Ex: cast call 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35 "retrieve()")
