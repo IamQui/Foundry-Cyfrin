@@ -157,6 +157,9 @@ ACTUAL DEPLOYMENT
 * forge script script/DeploySimpleStorage.s.sol --rpc-url http://127.0.0.1:8545 --broadcast --private-key 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
 (private key is a default anvil private key)
 
+## NEVER USE A .ENV FILE
+
+<!--
 ALTERNATIVE TO USING A PRIVATE KEY (ONLY FOR TESTING; NEVER PRODUCTION)
 
 * create new file .env
@@ -172,8 +175,31 @@ ALTERNATIVE TO USING A PRIVATE KEY (ONLY FOR TESTING; NEVER PRODUCTION)
 (Ex: echo $RPC_URL)
 
 * forge script script/DeploySimpleStorage.s.sol --rpc-url $RPC_URL --broadcast --private-key $PRIVATE_KEY
+-->
 
+## NEVER USE A .ENV FILE
 
+ private key for example: 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6
+
+* DO NOT USE TERMINAL IN VSCODE - USE CLI
+
+* cast wallet import <keyname> --interactive
+(Ex: cast wallet import testKey -- interactive)
+* Enter private key:
+(paste key: 0x2a871d0798f97d79848a013d4936a73bf4cc922c825d33c1cf7073dff6d409c6)
+* Enter password:
+(REMEMBER PASSWORD - VITAL)
+testKey keystore was saved successfully. Sender Address: 0xa0ee7a142d267c1f36714e4a8f75612f20a79720
+
+* cast wallet list
+(gives list of key(s))
+* cd .foundry/keystores/
+* ls
+
+* forge script script/DeploySimpleStorage.s.sol:DeploySimpleStorage --rpc-url http://127.0.0.1:8545 --account <keyname> --sender <senderaddress> --broadcast -vvvv
+(Ex: forge script script/DeploySimpleStorage.s.sol:DeploySimpleStorage --rpc-url http://127.0.0.1:8545 --account testKey --sender 0xa0ee7a142d267c1f36714e4a8f75612f20a79720 --broadcast -vvvv)
+* Enter keystore password:
+(enter password - without password, won't run)
 
 ## hex to dec
 
