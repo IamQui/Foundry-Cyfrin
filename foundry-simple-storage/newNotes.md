@@ -203,18 +203,18 @@ testKey keystore was saved successfully. Sender Address: 0xa0ee7a142d267c1f36714
 
 ## INTERACTING WITH CONTRACT USING CLI
 
-* setting (sending) info
+# Setting (Sending) Data
 
 * copy contract address
 (Ex: 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35)
-* cast send <contract address> "<function name + input parameters>" <data>
+* cast send <contract address> "<function name + (input parameters)>" <data> --rpc-url <rpc-url> --account <keyname>
 (Ex: cast send 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35 "store(uint256)" 1110 --rpc-url http://127.0.0.1:8545 --account testKey)
 * Enter keystore password:
 (enter password)
 
-* reading (retrieving) info
+# Reading (Retrieving) Data
 
-* cast call <contract address> "<function name + input parameters>"
+* cast call <contract address> "<function name + (input parameters)>"
 (Ex: cast call 0x700b6A60ce7EaaEA56F065753d8dcB9653dbAD35 "retrieve()")
 * hex value returned
 (Ex: 0x0000000000000000000000000000000000000000000000000000000000000456)
