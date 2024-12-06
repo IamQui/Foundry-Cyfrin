@@ -14,3 +14,6 @@ ACTUAL DEPLOYMENT
 ## Deploy to Sepolia
 
 * forge script script/DeploySimpleStorage.s.sol:DeploySimpleStorage --rpc-url https://eth-sepolia.g.alchemy.com/v2/GHd9LC0UqmA7VnXafXnAMkyTZ0J9P-dz --account testKey --sender 0xa0ee7a142d267c1f36714e4a8f75612f20a79720 --broadcast -vvvv
+
+
+forge script script/deploySimpleStorage.s.sol --rpc-url=$Sepolia_RPC_URL --private-key=$PRIVATE_KEY --broadcast
