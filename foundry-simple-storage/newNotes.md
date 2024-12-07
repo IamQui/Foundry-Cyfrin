@@ -223,6 +223,18 @@ testKey keystore was saved successfully. Sender Address: 0xa0ee7a142d267c1f36714
 * <data>
 (Ex: 1110)
 
+## Deploying on a testnet (Sepolia)
+
+(NaaS = Node as a Service)
+
+* Alchemy
+* Create new App
+* Network: Ethereum Sepolia
+
+PW: 9681
+`sepoliaKey` keystore was saved successfully. Sender Address: 0x6b686347a3f7a3f7fda330af7f1947006c3d452f
+
+
 ## hex to dec
 
 cast --to-base <hex value> dec
