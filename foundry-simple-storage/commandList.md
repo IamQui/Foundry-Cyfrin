@@ -11,6 +11,10 @@ ACTUAL DEPLOYMENT
 * Enter keystore password:
 (enter password - without password, won't run)
 
+Short Version:
+
+* forge script script/DeploySimpleStorage.s.sol --rpc-url $ANVIL_RPC_URL --account testKey --sender $ANVIL_SENDER --broadcast -vvvv
+
 ## Deploy to Sepolia
 
 * need sepolia key 
