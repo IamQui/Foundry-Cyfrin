@@ -231,6 +231,10 @@ testKey keystore was saved successfully. Sender Address: 0xa0ee7a142d267c1f36714
 * Create new App
 * Network: Ethereum Sepolia
 
+* need sepolia key 
+* need sender for sepolia key
+* need sepolia RPC
+
 PW: 9681
 `sepoliaKey` keystore was saved successfully. Sender Address: 0x6b686347a3f7a3f7fda330af7f1947006c3d452f
 
