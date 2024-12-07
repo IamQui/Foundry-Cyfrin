@@ -244,3 +244,14 @@ Sender Address: 0x6b686347a3f7a3f7fda330af7f1947006c3d452f
 cast --to-base <hex value> dec
 (ex: cast --to-base 0x714c2 dec) (0x714c2 is the hex of the value of gas)
 (ex: 464066)  
+
+## zkSync
+
+* Install with foundry-zksync
+* Compile with --zksync
+* zkSync foundry (foundryup-zksync)
+* Vanilla foundry (foundryup)
+
+zkSync foundry: (At present) forge 0.0.2 (2a54657 2024-12-07T00:26:37.606369492Z)
+
+Vanilla foundry: (At present) forge 0.2.0 (4923529 2024-11-25T00:23:51.014536290Z)
