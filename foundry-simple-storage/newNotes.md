@@ -247,11 +247,16 @@ cast --to-base <hex value> dec
 
 ## zkSync
 
-* Install with foundry-zksync
-* Compile with --zksync
+* Install: foundry-zksync
+* Compile: forge build --zksync
 * zkSync foundry (foundryup-zksync)
 * Vanilla foundry (foundryup)
 
 zkSync foundry: (At present) forge 0.0.2 (2a54657 2024-12-07T00:26:37.606369492Z)
 
 Vanilla foundry: (At present) forge 0.2.0 (4923529 2024-11-25T00:23:51.014536290Z)
+
+## Deploying to zkSync 
+
+
+
