@@ -28,3 +28,4 @@ Long Version:
 Short Version:
 
 * forge script script/DeploySimpleStorage.s.sol --rpc-url $SEPOLIA_RPC_URL --account sepoliaKey --sender $SEPOLIA_SENDER --broadcast -vvvv
+
