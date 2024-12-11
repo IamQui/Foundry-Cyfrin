@@ -260,3 +260,4 @@ Vanilla foundry: (At present) forge 0.2.0 (4923529 2024-11-25T00:23:51.014536290
 
 * naming convention: <contractNameTest.t.sol>
 (Ex: FundMeTest.t.sol)
+* import {Test} from "forge-std/Test.sol";
