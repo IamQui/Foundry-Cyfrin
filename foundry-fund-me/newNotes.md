@@ -263,3 +263,5 @@ Vanilla foundry: (At present) forge 0.2.0 (4923529 2024-11-25T00:23:51.014536290
 * import {Test} from "forge-std/Test.sol";
 * contract <contract name> is Test {}
 (contract inherites from Test)
+* console: 
+(import {Test, console} from "forge-std/Test.sol";)
