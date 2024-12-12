@@ -265,3 +265,5 @@ Vanilla foundry: (At present) forge 0.2.0 (4923529 2024-11-25T00:23:51.014536290
 (contract inherites from Test)
 * console: 
 (import {Test, console} from "forge-std/Test.sol";)
+* contract:
+(import {FundMe} from "../src/FundMe.sol";)
